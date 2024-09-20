@@ -1,0 +1,57 @@
+export enum ERoute {
+  Home = "/",
+  NotFound = "/:pathMatch(.*)*",
+  HoSoDamNhanCanXuLy = "/hoso/xuly",
+  HoSoDamNhanDaXuLy = "/hoso/daxuly",
+  HoSoQuanLyDamNhan = "/hoso-quanly/damnhan",
+  HoSoQuanLyDaXuLy = "/hoso-quanly/daxuly",
+  LichSuHoSoCanXuLi = `/hoso/:hoSoId/xulyhoso`,
+  HoSoDamNhanDaXuLyChiTiet = `/hoso/daxuly/:id/step/:stepId`,
+  HoSoQuanLyDaXuLyChiTiet = `/hoso-quanly/daxuly/:id/step/:stepId`,
+  ThuocTinh = "/thuoctinh",
+  ThuTuc = "/thutuc",
+  CreateThuTuc = `${ThuTuc}/create`,
+  DetailThuTuc = `${ThuTuc}/:id/detail`,
+  LePhi = "/lephi",
+  QuyTrinh = "/quytrinh",
+  Step = `${QuyTrinh}/:id/buoc`,
+  StepUser = `${QuyTrinh}/:id/stepuser`,
+  ThuocTinhThuTuc = `${ThuTuc}/:id/themthuoctinh`,
+  LichSuHoSo = `/hoso/:hoSoId/joblog`,
+  Login = "/login",
+  Account = "/account",
+  Config = "/config",
+}
+
+export enum ENameRoute {
+  Home = "Dashboard",
+  NotFound = "ErrorPage",
+  ThuocTinh = "ThuocTinh",
+  ThuTuc = "ThuTuc",
+  CreateThuTuc = "CreateThuTuc",
+  DetailThuTuc = "DetailThuTuc",
+  HoSoDamNhanCanXuLy = "HoSoDamNhanCanXuLy",
+  HoSoDamNhanDaXuLy = "HoSoDamNhanDaXuLy",
+  LichSuHoSoCanXuLi = "LichSuHoSoCanXuLy",
+  QuyTrinh = "QuyTrinh",
+  Step = "Step",
+  StepUser = "StepUser",
+  LePhi = "LePhi",
+  ThuocTinhThuTuc = "ThuocTinhThuTuc",
+  LichSuHoSo = "LichSuHoSo",
+  Login = "Login",
+  Account = "Account",
+  Config = "Config",
+  HoSoDamNhanDaXuLyChiTiet = "HoSoDamNhanDaXuLyChiTiet",
+  HoSoQuanLyDaXuLyChiTiet = "HoSoQuanLyDaXuLyChiTiet",
+  HoSoQuanLyDamNhan = "HoSoQuanLyDamNhan",
+  HoSoQuanLyDaXuLy = "HoSoQuanLyDaXuLy",
+}
+
+export const replaceId = (
+  route: ERoute,
+  keyReplace: string,
+  id: string | number | undefined | null,
+): string => {
+  return route.replace(`:${keyReplace}`, id + "");
+};
